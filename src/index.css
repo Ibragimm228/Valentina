@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+   0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 6s linear infinite;
+  will-change: background-position;
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.6));
+  }
+}
+
+.heart-glow {
+  animation: glow 2s infinite ease-in-out;
+  will-change: filter;
+}
+
+.heart-glow:hover {
+  filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.6));
+}
+
+.glass-effect {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
